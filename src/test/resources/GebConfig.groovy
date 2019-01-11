@@ -13,7 +13,18 @@ import java.util.logging.Level
 LoggingPreferences loggingPreferences = new LoggingPreferences()
 loggingPreferences.enable(LogType.BROWSER, Level.WARNING)
 
+// Test Admin User that must exist on the environment under test
+adminUsername = 'rtgtestadmin'
+adminPassword = 'V5jeCNxXdf6Xbo'
+
+// DEMO
 baseUrl = 'https://demo.royale-tippgemeinschaft.de'
+apiBaseUrl = 'https://api.demo.royale-tippgemeinschaft.de'
+
+// LOCAL
+//baseUrl = 'http://localhost:3000'
+//apiBaseUrl = 'http://localhost:8000'
+
 headless = false
 dockerChrome = false
 

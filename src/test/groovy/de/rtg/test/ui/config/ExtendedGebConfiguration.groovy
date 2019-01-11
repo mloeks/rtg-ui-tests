@@ -11,4 +11,16 @@ class ExtendedGebConfiguration extends Configuration {
     String getBaseUrl() {
         readValue(rawConfig, "baseUrl", "https://demo.royale-tippgemeinschaft.de")
     }
+
+    String getApiBaseUrl() {
+        readValue(rawConfig, "apiBaseUrl", "https://api.demo.royale-tippgemeinschaft.de")
+    }
+    
+    String getAdminUsername() {
+        readValue(rawConfig, "adminUsername", "admin")
+    }
+
+    String getAdminPassword() {
+        readValue(rawConfig, "adminPassword", "admin")
+    }
 }

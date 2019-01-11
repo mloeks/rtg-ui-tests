@@ -6,14 +6,6 @@ import de.rtg.test.ui.pages.ReceptionPage
 
 class RegistrationSpec extends AbstractRtgSpec {
 
-    def "reception is available"() {
-        when:
-        to ReceptionPage
-
-        then:
-        noExceptionThrown()
-    }
-
     def "a new user can register"() {
         given:
         ReceptionPage receptionPage = to ReceptionPage
@@ -27,11 +19,13 @@ class RegistrationSpec extends AbstractRtgSpec {
         FoyerPage foyer = at FoyerPage
 
         and:
-        foyer.loggedInUsername == newUser.username
-        foyer.isFirstVisit()
+        verifyAll {
+            foyer.loggedInUsername == newUser.username
+            foyer.isFirstVisit()
+        }
 
-//        cleanup:
-        // TODO remove created test user
+        cleanup:
+        adminApiActor.deleteUser(newUser)
     }
 
 }

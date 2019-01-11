@@ -8,8 +8,9 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.5.3'
+    compile 'org.codehaus.groovy:groovy-all:2.5.5'
     compile 'org.gebish:geb-spock:2.2'
+    compile 'org.codehaus.groovy.modules.http-builder:http-builder:0.7.1'
 
     testCompile 'org.gebish:geb-core:2.2'
     testCompile 'org.spockframework:spock-core:1.2-groovy-2.5'
