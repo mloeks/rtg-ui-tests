@@ -6,11 +6,11 @@ class FoyerPage extends Page {
 
     static url = "/foyer"
 
-    static at = { $(".Foyer__welcome").displayed }
+    static at = { $(".qa-foyer-welcome").displayed }
 
     static content = {
-        username { $('.Foyer__logged-in-username').text() }
-        firstVisitMessage (required: false) { $('.Foyer__first-visit') }
+        username { $('.qa-logged-in-username').text() }
+        firstVisitMessage (required: false) { $('.qa-first-visit-notification') }
     }
 
     String getLoggedInUsername() {

@@ -6,8 +6,8 @@ import geb.Module
 class RegisterDialogModule extends Module {
 
     static content = {
-        registerForm { $('.RegisterDialog__form') }
-        submitButton { $('.RegisterDialog__submit') }
+        registerForm { $('.qa-register-form') }
+        submitButton { $('.qa-register-submit') }
     }
 
     void fill(User user) {

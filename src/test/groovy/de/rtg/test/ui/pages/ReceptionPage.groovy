@@ -9,12 +9,12 @@ class ReceptionPage extends Page {
     static url = "/"
 
     static at = {
-        $(".BigPicture__heading").text() == "Willkommen"
+        $(".qa-reception-greeting").text() == "Willkommen"
     }
 
     static content = {
-        registerButton { $('.LoginForm__register') }
-        registerDialog (required: false) { $('.RegisterDialog').module(RegisterDialogModule) }
+        registerButton { $('.qa-register-button') }
+        registerDialog (required: false) { $('.qa-register-dialog').module(RegisterDialogModule) }
     }
 
     void register(User user) {
