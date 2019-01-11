@@ -1,31 +1,21 @@
 package de.rtg.test.ui
 
-import de.rtg.test.ui.models.User
-import de.rtg.test.ui.pages.FoyerPage
-import de.rtg.test.ui.pages.ReceptionPage
+import de.rtg.test.ui.actors.UserActor
 
 class RegistrationSpec extends AbstractRtgSpec {
 
+    UserActor userActor
+
     def "a new user can register"() {
         given:
-        ReceptionPage receptionPage = to ReceptionPage
-        User newUser = new User(username: 'test1234', firstName: 'Testy', lastName: 'McTestface',
-                email: 'testy@mctestface.com', password: 'test1234')
+        userActor = new UserActor(browser)
+                .withRegistered()
 
-        when:
-        receptionPage.register(newUser)
-
-        then:
-        FoyerPage foyer = at FoyerPage
-
-        and:
-        verifyAll {
-            foyer.loggedInUsername == newUser.username
-            foyer.isFirstVisit()
-        }
+        expect:
+        userActor
 
         cleanup:
-        adminApiActor.deleteUser(newUser)
+        adminApiActor.deleteUser(userActor.user)
     }
 
 }
