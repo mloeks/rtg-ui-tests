@@ -3,6 +3,7 @@ package de.rtg.test.ui.actors
 import de.rtg.test.ui.models.User
 import de.rtg.test.ui.modules.MainMenuModule
 import de.rtg.test.ui.pages.FoyerPage
+import de.rtg.test.ui.pages.ProfilePage
 import de.rtg.test.ui.pages.ReceptionPage
 import geb.Browser
 
@@ -31,10 +32,13 @@ class UserActor {
         browser.waitFor { browser.at ReceptionPage }
     }
 
-    public void goToProfile() {
+    public ProfilePage goToProfile() {
         FoyerPage foyer = browser.to FoyerPage
         MainMenuModule menu = foyer.openMenu()
         menu.userPanel.click()
+
+        browser.waitFor { browser.at ProfilePage }
+        return browser.at(ProfilePage)
     }
 
     private boolean registrationSuccessful() {
