@@ -9,9 +9,11 @@ class RegistrationSpec extends AbstractRtgSpec {
     def "a new user can register"() {
         given:
         userActor = new UserActor(browser)
-                .withRegistered()
 
-        expect:
+        when:
+        userActor.register()
+
+        then:
         userActor
 
         cleanup:

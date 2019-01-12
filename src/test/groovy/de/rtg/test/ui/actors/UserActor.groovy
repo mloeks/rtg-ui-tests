@@ -17,11 +17,10 @@ class UserActor {
         user = createRandom()
     }
 
-    public withRegistered() {
+    public void register() {
         ReceptionPage receptionPage = browser.to ReceptionPage
         receptionPage.register(user)
         assert registrationSuccessful()
-        return this
     }
 
     private boolean registrationSuccessful() {
