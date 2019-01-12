@@ -1,5 +1,7 @@
 package de.rtg.test.ui.pages
 
+
+import de.rtg.test.ui.modules.PostModule
 import geb.Page
 
 class FoyerPage extends Page {
@@ -11,6 +13,7 @@ class FoyerPage extends Page {
     static content = {
         username { $('.qa-logged-in-username').text() }
         firstVisitMessage (required: false) { $('.qa-first-visit-notification') }
+        posts { $('.qa-post').moduleList(PostModule) }
     }
 
     String getLoggedInUsername() {
@@ -20,5 +23,4 @@ class FoyerPage extends Page {
     boolean isFirstVisit() {
         return firstVisitMessage.displayed
     }
-
 }
