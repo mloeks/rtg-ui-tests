@@ -36,6 +36,7 @@ abstract class AbstractRtgSpec extends GebSpec {
     }
 
     def cleanupSpec() {
+        userActor.logout()
         adminApiActor.deleteUser(userActor.user)
     }
 
