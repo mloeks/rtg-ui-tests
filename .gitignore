@@ -1,6 +1,7 @@
 .gradle
 /build/
 !gradle/wrapper/gradle-wrapper.jar
+bin
 
 ### IntelliJ IDEA ###
 .idea
@@ -8,3 +9,7 @@
 *.iml
 *.ipr
 /out/
+
+### VS Code
+.vscode
+.classpath
